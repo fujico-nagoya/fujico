@@ -21,7 +21,9 @@
             }
         }
     </script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Babel Standalone (Fixed Version for Stability) -->
+    <script src="https://unpkg.com/@babel/standalone@7.23.6/babel.min.js"></script>
 
     <style>
         html { scroll-behavior: smooth; }
@@ -31,7 +33,8 @@
 <body class="bg-slate-50 text-slate-800">
     <div id="root"></div>
 
-    <script type="text/babel" data-type="module">
+    <!-- 修正: data-presets="react" を追加し、data-type="module" と併用 -->
+    <script type="text/babel" data-type="module" data-presets="react">
         import React, { useState, useEffect, useRef } from 'react';
         import { createRoot } from 'react-dom/client';
         import { 
