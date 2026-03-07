@@ -79,19 +79,26 @@
 
         const Header = () => (
             <header className="sticky top-0 z-40 bg-white shadow-md">
-                <div className="container mx-auto px-4 py-3 flex justify-between items-center h-24"> 
+                <div className="container mx-auto px-3 md:px-4 py-2 md:py-3 flex justify-between items-center h-16 md:h-24"> 
                     {/* ロゴ画像エリア */}
                     <a href="#" className="flex items-center h-full py-1 hover:opacity-90 transition-opacity">
                         <img 
                             src="image_050524.png" 
                             alt="株式会社フジコー 名古屋市の直結切替工事" 
-                            className="h-full w-auto object-contain max-h-[80px]" 
+                            className="h-full w-auto object-contain max-h-[36px] md:max-h-[80px]" 
                             onError={(e) => {
                                 e.target.style.display = 'none';
-                                e.target.parentElement.innerHTML = '<span class="text-xl font-bold text-slate-800">株式会社フジコー</span>';
+                                e.target.parentElement.innerHTML = '<span class="text-[12px] sm:text-sm md:text-xl font-bold text-slate-800">株式会社フジコー</span>';
                             }} 
                         />
                     </a>
+
+                    {/* スマホ用右側テキスト */}
+                    <div className="md:hidden flex flex-col justify-center text-right ml-2">
+                        <span className="text-[10px] sm:text-xs font-black text-blue-900 leading-tight">
+                            直結切替工事<br />概算シミュレーター
+                        </span>
+                    </div>
 
                     <nav className="hidden lg:flex gap-6 text-sm font-medium items-center">
                         <a href="#calculator" className="hover:text-blue-600 transition-colors">概算見積</a>
@@ -101,7 +108,7 @@
                             施工事例・公式HP <ExternalLink className="h-3 w-3" />
                         </a>
                     </nav>
-                    <a href="#contact" className="hidden sm:inline-flex bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl text-sm">
+                    <a href="#contact" className="hidden md:inline-flex bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl text-sm">
                         無料現地調査を依頼
                     </a>
                 </div>
